@@ -33,6 +33,8 @@ namespace ejProductos
             this.añadirFila = new System.Windows.Forms.Button();
             this.añadirFilaSeguido = new System.Windows.Forms.Button();
             this.comprobarVacio = new System.Windows.Forms.Label();
+            this.añadirColumna = new System.Windows.Forms.Button();
+            this.cuentaFilasColumnas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,38 +51,62 @@ namespace ejProductos
             // 
             // añadirFila
             // 
-            this.añadirFila.Location = new System.Drawing.Point(464, 264);
+            this.añadirFila.Location = new System.Drawing.Point(615, 262);
             this.añadirFila.Name = "añadirFila";
             this.añadirFila.Size = new System.Drawing.Size(115, 36);
             this.añadirFila.TabIndex = 1;
             this.añadirFila.Text = "Añadir nueva fila";
             this.añadirFila.UseVisualStyleBackColor = true;
+            this.añadirFila.Visible = false;
             this.añadirFila.Click += new System.EventHandler(this.añadirFila_Click);
             // 
             // añadirFilaSeguido
             // 
-            this.añadirFilaSeguido.Location = new System.Drawing.Point(464, 329);
+            this.añadirFilaSeguido.Location = new System.Drawing.Point(615, 329);
             this.añadirFilaSeguido.Name = "añadirFilaSeguido";
             this.añadirFilaSeguido.Size = new System.Drawing.Size(115, 55);
             this.añadirFilaSeguido.TabIndex = 2;
             this.añadirFilaSeguido.Text = "Añadir nueva fila con todos los valores de golpe";
             this.añadirFilaSeguido.UseVisualStyleBackColor = true;
+            this.añadirFilaSeguido.Visible = false;
             this.añadirFilaSeguido.Click += new System.EventHandler(this.añadirFilaSeguido_Click);
             // 
             // comprobarVacio
             // 
             this.comprobarVacio.AutoSize = true;
-            this.comprobarVacio.Location = new System.Drawing.Point(147, 371);
+            this.comprobarVacio.Location = new System.Drawing.Point(147, 250);
             this.comprobarVacio.Name = "comprobarVacio";
             this.comprobarVacio.Size = new System.Drawing.Size(245, 13);
             this.comprobarVacio.TabIndex = 3;
             this.comprobarVacio.Text = "Aquí se puede comprobar si DataGridView es nulo";
+            // 
+            // añadirColumna
+            // 
+            this.añadirColumna.Location = new System.Drawing.Point(464, 262);
+            this.añadirColumna.Name = "añadirColumna";
+            this.añadirColumna.Size = new System.Drawing.Size(115, 36);
+            this.añadirColumna.TabIndex = 4;
+            this.añadirColumna.Text = "Añadir nueva columna";
+            this.añadirColumna.UseVisualStyleBackColor = true;
+            this.añadirColumna.Click += new System.EventHandler(this.añadirColumna_Click);
+            // 
+            // cuentaFilasColumnas
+            // 
+            this.cuentaFilasColumnas.Location = new System.Drawing.Point(464, 329);
+            this.cuentaFilasColumnas.Name = "cuentaFilasColumnas";
+            this.cuentaFilasColumnas.Size = new System.Drawing.Size(115, 55);
+            this.cuentaFilasColumnas.TabIndex = 5;
+            this.cuentaFilasColumnas.Text = "Contar filas y columnas del DataGridView\r\n";
+            this.cuentaFilasColumnas.UseVisualStyleBackColor = true;
+            this.cuentaFilasColumnas.Click += new System.EventHandler(this.cuentaFilasColumnas_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cuentaFilasColumnas);
+            this.Controls.Add(this.añadirColumna);
             this.Controls.Add(this.comprobarVacio);
             this.Controls.Add(this.añadirFilaSeguido);
             this.Controls.Add(this.añadirFila);
@@ -99,6 +125,8 @@ namespace ejProductos
         private System.Windows.Forms.Button añadirFila;
         private System.Windows.Forms.Button añadirFilaSeguido;
         private System.Windows.Forms.Label comprobarVacio;
+        private System.Windows.Forms.Button añadirColumna;
+        private System.Windows.Forms.Button cuentaFilasColumnas;
     }
 }
 
