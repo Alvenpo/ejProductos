@@ -30,15 +30,15 @@
         {
             this.modBotonSalir = new System.Windows.Forms.Button();
             this.modTablaProductos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.modInfo = new System.Windows.Forms.Label();
-            this.modBotonModificar = new System.Windows.Forms.Button();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.modInfo = new System.Windows.Forms.Label();
+            this.modBotonModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.modTablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +51,7 @@
             this.modBotonSalir.TabIndex = 16;
             this.modBotonSalir.Text = "Salir";
             this.modBotonSalir.UseVisualStyleBackColor = true;
+            this.modBotonSalir.Click += new System.EventHandler(this.modBotonSalir_Click);
             // 
             // modTablaProductos
             // 
@@ -68,36 +69,6 @@
             this.modTablaProductos.Name = "modTablaProductos";
             this.modTablaProductos.Size = new System.Drawing.Size(371, 272);
             this.modTablaProductos.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(495, 162);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "label1";
-            // 
-            // modInfo
-            // 
-            this.modInfo.AutoSize = true;
-            this.modInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.modInfo.Location = new System.Drawing.Point(46, 9);
-            this.modInfo.Name = "modInfo";
-            this.modInfo.Size = new System.Drawing.Size(559, 18);
-            this.modInfo.TabIndex = 13;
-            this.modInfo.Text = "Para modificar un producto haz click en el botón Modificar de la fila correspondi" +
-    "ente";
-            // 
-            // modBotonModificar
-            // 
-            this.modBotonModificar.Location = new System.Drawing.Point(473, 241);
-            this.modBotonModificar.Name = "modBotonModificar";
-            this.modBotonModificar.Size = new System.Drawing.Size(75, 23);
-            this.modBotonModificar.TabIndex = 17;
-            this.modBotonModificar.Text = "Modificar";
-            this.modBotonModificar.UseVisualStyleBackColor = true;
-            this.modBotonModificar.Click += new System.EventHandler(this.modBotonModificar_Click);
             // 
             // nombre
             // 
@@ -147,6 +118,36 @@
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             this.descripcion.Width = 88;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(495, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "label1";
+            // 
+            // modInfo
+            // 
+            this.modInfo.AutoSize = true;
+            this.modInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.modInfo.Location = new System.Drawing.Point(46, 9);
+            this.modInfo.Name = "modInfo";
+            this.modInfo.Size = new System.Drawing.Size(559, 18);
+            this.modInfo.TabIndex = 13;
+            this.modInfo.Text = "Para modificar un producto haz click en el botón Modificar de la fila correspondi" +
+    "ente";
+            // 
+            // modBotonModificar
+            // 
+            this.modBotonModificar.Location = new System.Drawing.Point(473, 241);
+            this.modBotonModificar.Name = "modBotonModificar";
+            this.modBotonModificar.Size = new System.Drawing.Size(75, 23);
+            this.modBotonModificar.TabIndex = 17;
+            this.modBotonModificar.Text = "Modificar";
+            this.modBotonModificar.UseVisualStyleBackColor = true;
+            this.modBotonModificar.Click += new System.EventHandler(this.modBotonModificar_Click);
             // 
             // ProductoMod
             // 

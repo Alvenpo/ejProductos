@@ -62,7 +62,7 @@ namespace ejProductos
                 delTablaProductos.Rows.RemoveAt(e.RowIndex);
                 label1.Text = e.RowIndex.ToString();
                 DelDGV = delTablaProductos;
-                if (delBotonSalir.DialogResult == DialogResult.Cancel) //Optimización: con esto nos aseguramos de que solo tengamos que volver a crear un DataGridView en Form1 tras pulsar el botón Salir cuando se haya borrado al menos 1 fila (sin embargo, si se pulsa la cruz para cerrar la ventana, SIEMPRE se creará un nuevo DataGridView, pues siempre devuelve Cancel)
+                if (delBotonSalir.DialogResult == DialogResult.Cancel) //Optimización: con esto nos aseguramos de que solo tengamos que volver a crear un DataGridView en Form1 tras pulsar el botón Salir cuando se haya borrado al menos 1 fila 
                 {
                     delBotonSalir.DialogResult = DialogResult.OK;
                 }

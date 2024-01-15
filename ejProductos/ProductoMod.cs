@@ -134,10 +134,31 @@ namespace ejProductos
                 botonModPulsado = true;
             }
             //DelDGV = delTablaProductos;
-            if (modBotonSalir.DialogResult == DialogResult.Cancel) //Optimización: con esto nos aseguramos de que solo tengamos que volver a crear un DataGridView en Form1 tras pulsar el botón Salir cuando se haya borrado al menos 1 fila (sin embargo, si se pulsa la cruz para cerrar la ventana, SIEMPRE se creará un nuevo DataGridView, pues siempre devuelve Cancel)
+            if (modBotonSalir.DialogResult == DialogResult.Cancel) //Es el peor sitio donde colocarlo, pero es la única forma de hacerlo funcionar (abajo se explican las razones)
             {
                 modBotonSalir.DialogResult = DialogResult.OK;
             }
         }
+
+        private void modBotonSalir_Click(object sender, EventArgs e)
+        {
+            if (ModDGV != modTablaProductos)  //Optimización: con esto nos aseguramos de que solo tengamos que volver a crear un DataGridView en Form1 tras pulsar el botón Salir cuando se haya modificado al menos 1 celda
+            {
+                /*if (modBotonSalir.DialogResult == DialogResult.Cancel) //No se usa aquí porque la propiedad se cambia después de pulsar el botón, con lo que el valor siempre sería Cancel
+                {
+                    modBotonSalir.DialogResult = DialogResult.OK;
+                }*/
+                ModDGV = modTablaProductos;
+                //Si la tabla ha sido modificada, guardar nueva tabla
+            }
+        }
+
+       /* private void modTablaProductos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (modBotonSalir.DialogResult == DialogResult.Cancel) //Esto sería ideal, pero no se usa porque siempre se activa, ya que al escribir los datos de TablaProductos en modTablaProductos se activa el evento
+            {
+                modBotonSalir.DialogResult = DialogResult.OK;
+            }
+        }*/
     }
 }

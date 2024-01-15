@@ -120,6 +120,7 @@ namespace ejProductos
                     {
                         tablaProductos.Rows.RemoveAt(0);
                     }*/
+                    //textoPrueba.Text = i.ToString();
                 }
                 /*if (tablaProductos.Rows.Count < 1)
                 {
@@ -147,10 +148,25 @@ namespace ejProductos
         private void menuModificar_Click(object sender, EventArgs e)
         {
             ProductoMod pmod = new ProductoMod(this);
-            //Productos = tablaProductos; //Esto estaba antes de hacerlo en menuAñadir_Click
             if(pmod.ShowDialog() == DialogResult.OK)
             {
-                Console.WriteLine("Hey");
+                DataGridView moddgv = pmod.ModDGV;
+                //textoPrueba.Text = tablaProductos.Rows.Count.ToString();
+                for (int i = 0; tablaProductos.Rows.Count > 0; i++) 
+                {
+                    tablaProductos.Rows.RemoveAt(0); 
+                }
+                for (int i = 0; i < moddgv.Rows.Count; i++)
+                {
+                    //tablaProductos.Rows.Add(""); 
+                    for (int j = 0; j < moddgv.Columns.Count; j++)
+                    {
+                        //tablaProductos.Rows[i].Cells[j].Value = deldgv.Rows[i].Cells[j+1].Value.ToString();
+                        CeldasFila[j]/*textoPrueba.Text*/ = moddgv.Rows[i].Cells[j].Value.ToString(); //Forma alternativa
+                    }
+                    tablaProductos.Rows.Add(CeldasFila[0], CeldasFila[1], CeldasFila[2], CeldasFila[3], CeldasFila[4], CeldasFila[5]); //Forma alternativa
+                }
+                textoPrueba.Text = "Tabla actualizada";
             }
         }
     }
