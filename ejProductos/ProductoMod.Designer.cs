@@ -30,15 +30,17 @@
         {
             this.modBotonSalir = new System.Windows.Forms.Button();
             this.modTablaProductos = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.modInfo = new System.Windows.Forms.Label();
+            this.modBotonModificar = new System.Windows.Forms.Button();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.modInfo = new System.Windows.Forms.Label();
-            this.modBotonModificar = new System.Windows.Forms.Button();
+            this.foto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ruta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.modTablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +66,45 @@
             this.cantidad,
             this.precio,
             this.tipo,
-            this.descripcion});
+            this.descripcion,
+            this.foto,
+            this.ruta});
             this.modTablaProductos.Location = new System.Drawing.Point(49, 35);
             this.modTablaProductos.Name = "modTablaProductos";
+            this.modTablaProductos.RowHeadersWidth = 4;
             this.modTablaProductos.Size = new System.Drawing.Size(371, 272);
             this.modTablaProductos.TabIndex = 15;
+            this.modTablaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.modTablaProductos_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(495, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "label1";
+            // 
+            // modInfo
+            // 
+            this.modInfo.AutoSize = true;
+            this.modInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.modInfo.Location = new System.Drawing.Point(46, 9);
+            this.modInfo.Name = "modInfo";
+            this.modInfo.Size = new System.Drawing.Size(559, 18);
+            this.modInfo.TabIndex = 13;
+            this.modInfo.Text = "Para modificar un producto haz click en el botón Modificar de la fila correspondi" +
+    "ente";
+            // 
+            // modBotonModificar
+            // 
+            this.modBotonModificar.Location = new System.Drawing.Point(473, 241);
+            this.modBotonModificar.Name = "modBotonModificar";
+            this.modBotonModificar.Size = new System.Drawing.Size(75, 23);
+            this.modBotonModificar.TabIndex = 17;
+            this.modBotonModificar.Text = "Modificar";
+            this.modBotonModificar.UseVisualStyleBackColor = true;
+            this.modBotonModificar.Click += new System.EventHandler(this.modBotonModificar_Click);
             // 
             // nombre
             // 
@@ -109,6 +145,7 @@
             this.tipo.HeaderText = "Tipo";
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
+            this.tipo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.tipo.Width = 53;
             // 
             // descripcion
@@ -119,35 +156,20 @@
             this.descripcion.ReadOnly = true;
             this.descripcion.Width = 88;
             // 
-            // label1
+            // foto
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(495, 162);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "label1";
+            this.foto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.foto.HeaderText = "Foto";
+            this.foto.Name = "foto";
+            this.foto.ReadOnly = true;
             // 
-            // modInfo
+            // ruta
             // 
-            this.modInfo.AutoSize = true;
-            this.modInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.modInfo.Location = new System.Drawing.Point(46, 9);
-            this.modInfo.Name = "modInfo";
-            this.modInfo.Size = new System.Drawing.Size(559, 18);
-            this.modInfo.TabIndex = 13;
-            this.modInfo.Text = "Para modificar un producto haz click en el botón Modificar de la fila correspondi" +
-    "ente";
-            // 
-            // modBotonModificar
-            // 
-            this.modBotonModificar.Location = new System.Drawing.Point(473, 241);
-            this.modBotonModificar.Name = "modBotonModificar";
-            this.modBotonModificar.Size = new System.Drawing.Size(75, 23);
-            this.modBotonModificar.TabIndex = 17;
-            this.modBotonModificar.Text = "Modificar";
-            this.modBotonModificar.UseVisualStyleBackColor = true;
-            this.modBotonModificar.Click += new System.EventHandler(this.modBotonModificar_Click);
+            this.ruta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ruta.HeaderText = "Ruta";
+            this.ruta.Name = "ruta";
+            this.ruta.ReadOnly = true;
+            this.ruta.Width = 55;
             // 
             // ProductoMod
             // 
@@ -184,5 +206,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewImageColumn foto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ruta;
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Ropa");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Alimentación");
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Mueble");
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Libro");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Ropa");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Alimentación");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Mueble");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Libro");
             this.addInfo = new System.Windows.Forms.Label();
             this.addBotonAñadir = new System.Windows.Forms.Button();
             this.addBotonCancelar = new System.Windows.Forms.Button();
@@ -49,6 +49,11 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.addTipo = new System.Windows.Forms.ComboBox();
             this.addCantidad = new System.Windows.Forms.TextBox();
+            this.previewFoto = new System.Windows.Forms.PictureBox();
+            this.addBotonFoto = new System.Windows.Forms.Button();
+            this.addLabelFoto = new System.Windows.Forms.Label();
+            this.addFoto = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.previewFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // addInfo
@@ -65,7 +70,8 @@
             // addBotonAñadir
             // 
             this.addBotonAñadir.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.addBotonAñadir.Location = new System.Drawing.Point(437, 260);
+            this.addBotonAñadir.Enabled = false;
+            this.addBotonAñadir.Location = new System.Drawing.Point(437, 277);
             this.addBotonAñadir.Name = "addBotonAñadir";
             this.addBotonAñadir.Size = new System.Drawing.Size(75, 23);
             this.addBotonAñadir.TabIndex = 7;
@@ -76,7 +82,7 @@
             // addBotonCancelar
             // 
             this.addBotonCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.addBotonCancelar.Location = new System.Drawing.Point(527, 260);
+            this.addBotonCancelar.Location = new System.Drawing.Point(527, 277);
             this.addBotonCancelar.Name = "addBotonCancelar";
             this.addBotonCancelar.Size = new System.Drawing.Size(75, 23);
             this.addBotonCancelar.TabIndex = 8;
@@ -149,6 +155,7 @@
             this.addNombre.Name = "addNombre";
             this.addNombre.Size = new System.Drawing.Size(195, 20);
             this.addNombre.TabIndex = 1;
+            this.addNombre.TextChanged += new System.EventHandler(this.addComprobarCampos_TextChanged);
             // 
             // addCodigo
             // 
@@ -156,6 +163,7 @@
             this.addCodigo.Name = "addCodigo";
             this.addCodigo.Size = new System.Drawing.Size(134, 20);
             this.addCodigo.TabIndex = 2;
+            this.addCodigo.TextChanged += new System.EventHandler(this.addComprobarCampos_TextChanged);
             // 
             // addPrecio
             // 
@@ -163,6 +171,7 @@
             this.addPrecio.Name = "addPrecio";
             this.addPrecio.Size = new System.Drawing.Size(100, 20);
             this.addPrecio.TabIndex = 4;
+            this.addPrecio.TextChanged += new System.EventHandler(this.addComprobarCampos_TextChanged);
             // 
             // addDescripcion
             // 
@@ -172,6 +181,7 @@
             this.addDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.addDescripcion.Size = new System.Drawing.Size(309, 54);
             this.addDescripcion.TabIndex = 6;
+            this.addDescripcion.TextChanged += new System.EventHandler(this.addComprobarCampos_TextChanged);
             // 
             // listBox1
             // 
@@ -183,7 +193,7 @@
             "Alimentación",
             "Mueble",
             "Libro"});
-            this.listBox1.Location = new System.Drawing.Point(455, 207);
+            this.listBox1.Location = new System.Drawing.Point(210, 211);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 19);
             this.listBox1.TabIndex = 15;
@@ -191,13 +201,13 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            listViewItem9.Tag = "Ropa";
+            listViewItem13.Tag = "Ropa";
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12});
-            this.listView1.Location = new System.Drawing.Point(455, 89);
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16});
+            this.listView1.Location = new System.Drawing.Point(239, 92);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(91, 100);
             this.listView1.TabIndex = 17;
@@ -215,6 +225,7 @@
             this.addTipo.Name = "addTipo";
             this.addTipo.Size = new System.Drawing.Size(121, 21);
             this.addTipo.TabIndex = 5;
+            this.addTipo.TextChanged += new System.EventHandler(this.addComprobarCampos_TextChanged);
             // 
             // addCantidad
             // 
@@ -222,12 +233,59 @@
             this.addCantidad.Name = "addCantidad";
             this.addCantidad.Size = new System.Drawing.Size(120, 20);
             this.addCantidad.TabIndex = 3;
+            this.addCantidad.TextChanged += new System.EventHandler(this.addComprobarCampos_TextChanged);
+            // 
+            // previewFoto
+            // 
+            this.previewFoto.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.previewFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.previewFoto.Location = new System.Drawing.Point(437, 109);
+            this.previewFoto.Name = "previewFoto";
+            this.previewFoto.Size = new System.Drawing.Size(164, 137);
+            this.previewFoto.TabIndex = 18;
+            this.previewFoto.TabStop = false;
+            this.previewFoto.UseWaitCursor = true;
+            // 
+            // addBotonFoto
+            // 
+            this.addBotonFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.addBotonFoto.Location = new System.Drawing.Point(476, 58);
+            this.addBotonFoto.Name = "addBotonFoto";
+            this.addBotonFoto.Size = new System.Drawing.Size(125, 23);
+            this.addBotonFoto.TabIndex = 19;
+            this.addBotonFoto.Text = "Seleccionar foto";
+            this.addBotonFoto.UseVisualStyleBackColor = true;
+            this.addBotonFoto.Click += new System.EventHandler(this.addBotonFoto_Click);
+            // 
+            // addLabelFoto
+            // 
+            this.addLabelFoto.AutoSize = true;
+            this.addLabelFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.addLabelFoto.Location = new System.Drawing.Point(434, 61);
+            this.addLabelFoto.Name = "addLabelFoto";
+            this.addLabelFoto.Size = new System.Drawing.Size(36, 17);
+            this.addLabelFoto.TabIndex = 20;
+            this.addLabelFoto.Text = "Foto";
+            // 
+            // addFoto
+            // 
+            this.addFoto.BackColor = System.Drawing.SystemColors.Window;
+            this.addFoto.Location = new System.Drawing.Point(437, 85);
+            this.addFoto.Name = "addFoto";
+            this.addFoto.ReadOnly = true;
+            this.addFoto.Size = new System.Drawing.Size(164, 20);
+            this.addFoto.TabIndex = 21;
+            this.addFoto.TextChanged += new System.EventHandler(this.addComprobarCampos_TextChanged);
             // 
             // ProductoAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 319);
+            this.Controls.Add(this.addFoto);
+            this.Controls.Add(this.addLabelFoto);
+            this.Controls.Add(this.addBotonFoto);
+            this.Controls.Add(this.previewFoto);
             this.Controls.Add(this.addCantidad);
             this.Controls.Add(this.addTipo);
             this.Controls.Add(this.listView1);
@@ -250,6 +308,7 @@
             this.MinimizeBox = false;
             this.Name = "ProductoAdd";
             this.Text = "ProductoAñadir";
+            ((System.ComponentModel.ISupportInitialize)(this.previewFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +333,9 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ComboBox addTipo;
         private System.Windows.Forms.TextBox addCantidad;
+        private System.Windows.Forms.PictureBox previewFoto;
+        private System.Windows.Forms.Button addBotonFoto;
+        private System.Windows.Forms.Label addLabelFoto;
+        private System.Windows.Forms.TextBox addFoto;
     }
 }

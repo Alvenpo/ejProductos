@@ -15,6 +15,7 @@ namespace ejProductos
         Form padre;
         //public DataGridView guardaDGV {  get; set; }
         //private String[] CeldasFila = new String[6]; //En caso de usar la forma 2
+        private int anchoMax = 0;
         public DataGridView DelDGV {  get; set; }
         public ProductoDel(Form padre)
         {
@@ -35,22 +36,45 @@ namespace ejProductos
                 for (int i = 0; i < dgv.Rows.Count; i++)
                 {
                     label1.Text = "Se ha actualizado la lista";
+                    delTablaProductos.RowTemplate.Height = dgv.Rows[i].Height; //ATENCIÓN: Esto tal vez no sea necesario, probarlo comentado más tarde
+                    //altoMax = tablaProductos.RowTemplate.Height;
                     //Forma1
                     delTablaProductos.Rows.Add("Borrar");
                     for (int j = 0; j < dgv.Columns.Count; j++)
                     {
-                        //Forma1
-                        delTablaProductos.Rows[i].Cells[j+1].Value = dgv.Rows[i].Cells[j].Value.ToString(); //IMPORTANTE: PARA HACER ESTO EL DATAGRIDVIEW NO DEBE ESTAR ASOCIADO A NINGUN DATASOURCE
-                        //Forma2
-                        //CeldasFila[j] = dgv.Rows[i].Cells[j].Value.ToString();
+                        if (j == 6)
+                        {
+                            delTablaProductos.Rows[i].Cells[j + 1].Value = dgv.Rows[i].Cells[j].Value;
+                        }
+                        else
+                        {
+                            //Forma1
+                            delTablaProductos.Rows[i].Cells[j + 1].Value = dgv.Rows[i].Cells[j].Value.ToString(); //IMPORTANTE: PARA HACER ESTO EL DATAGRIDVIEW NO DEBE ESTAR ASOCIADO A NINGUN DATASOURCE
+                            //Forma2
+                            //CeldasFila[j] = dgv.Rows[i].Cells[j].Value.ToString();
+                        }
                     }
                     //Forma2
                     //dataGridView1.Rows.Add(CeldasFila[0], CeldasFila[1], CeldasFila[2], CeldasFila[3], CeldasFila[4], CeldasFila[5]); //IMPORTANTE: LO MISMO QUE ARRIBA
+                    if (Image.FromFile(dgv.Rows[i].Cells["ruta"/*7*/].Value.ToString()).Width > delTablaProductos.Columns["foto"].MinimumWidth)
+                    {
+                        delTablaProductos.Columns["foto"].MinimumWidth = Image.FromFile(dgv.Rows[i].Cells["ruta"].Value.ToString()).Width;
+                        //anchoMax = tablaProductos.Columns["foto"].MinimumWidth;
+                    }
                 }
+                //delTablaProductos.Columns["foto"].MinimumWidth = dgv.Columns["foto"].MinimumWidth; //Lo he intentado como he podido y no hay forma de acceder al valor de la imagen de una celda, con lo cual si se borra la foto más ancha el valor de MinimumWidth no se actualizará, lo cual puede ser un problema también al guardar dicho valor en la tabla de Form1
                 ((Form1)padre).ProductosNuevo = delTablaProductos;
                 //dataGridView1
             }
             DelDGV = delTablaProductos;
+        }
+
+        private void delBotonSalir_Click(object sender, EventArgs e)
+        {
+            if (DelDGV != delTablaProductos)
+            {
+                DelDGV = delTablaProductos;
+            }
         }
 
         private void delTablaProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -61,7 +85,16 @@ namespace ejProductos
                 //for (int i = 0; i < dataGridView; i++)
                 delTablaProductos.Rows.RemoveAt(e.RowIndex);
                 label1.Text = e.RowIndex.ToString();
-                DelDGV = delTablaProductos;
+                delTablaProductos.Columns["foto"].MinimumWidth = 2; //Si le pongo de anchoMínimo < 2 salta una excepción
+                for (int i = 0; i < delTablaProductos.Rows.Count; i++) 
+                {
+                    if (Image.FromFile(delTablaProductos.Rows[i].Cells["ruta"/*7*/].Value.ToString()).Width > delTablaProductos.Columns["foto"].MinimumWidth)
+                    {
+                        delTablaProductos.Columns["foto"].MinimumWidth = Image.FromFile(delTablaProductos.Rows[i].Cells["ruta"].Value.ToString()).Width;
+                        //anchoMax = tablaProductos.Columns["foto"].MinimumWidth;
+                    }
+                }
+                //DelDGV = delTablaProductos;
                 if (delBotonSalir.DialogResult == DialogResult.Cancel) //Optimización: con esto nos aseguramos de que solo tengamos que volver a crear un DataGridView en Form1 tras pulsar el botón Salir cuando se haya borrado al menos 1 fila 
                 {
                     delBotonSalir.DialogResult = DialogResult.OK;

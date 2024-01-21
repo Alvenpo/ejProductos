@@ -29,6 +29,7 @@ namespace ejProductos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnaBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.añadirFila = new System.Windows.Forms.Button();
@@ -40,16 +41,21 @@ namespace ejProductos
             this.menuEliminar = new System.Windows.Forms.Button();
             this.menuModificar = new System.Windows.Forms.Button();
             this.tablaProductos = new System.Windows.Forms.DataGridView();
+            this.textoPrueba = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.botonSecreto = new System.Windows.Forms.Button();
+            this.botonImportar = new System.Windows.Forms.Button();
+            this.botonExportar = new System.Windows.Forms.Button();
+            this.menuFiltrar = new System.Windows.Forms.CheckedListBox();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textoPrueba = new System.Windows.Forms.Label();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.foto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ruta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
             this.SuspendLayout();
@@ -164,61 +170,15 @@ namespace ejProductos
             this.cantidad,
             this.precio,
             this.tipo,
-            this.descripcion});
+            this.descripcion,
+            this.foto,
+            this.ruta});
             this.tablaProductos.Location = new System.Drawing.Point(385, 12);
             this.tablaProductos.Name = "tablaProductos";
             this.tablaProductos.ReadOnly = true;
+            this.tablaProductos.RowHeadersWidth = 4;
             this.tablaProductos.Size = new System.Drawing.Size(371, 272);
             this.tablaProductos.TabIndex = 9;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 69;
-            // 
-            // codigo
-            // 
-            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 65;
-            // 
-            // cantidad
-            // 
-            this.cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 74;
-            // 
-            // precio
-            // 
-            this.precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.precio.HeaderText = "Precio (unidad)";
-            this.precio.MinimumWidth = 101;
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 101;
-            // 
-            // tipo
-            // 
-            this.tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            this.tipo.Width = 53;
-            // 
-            // descripcion
-            // 
-            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 88;
             // 
             // textoPrueba
             // 
@@ -233,21 +193,140 @@ namespace ejProductos
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button1
+            // botonSecreto
             // 
-            this.button1.Location = new System.Drawing.Point(408, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.botonSecreto.Location = new System.Drawing.Point(291, 12);
+            this.botonSecreto.Name = "botonSecreto";
+            this.botonSecreto.Size = new System.Drawing.Size(75, 23);
+            this.botonSecreto.TabIndex = 11;
+            this.botonSecreto.Text = "Secreto";
+            this.botonSecreto.UseVisualStyleBackColor = true;
+            this.botonSecreto.Click += new System.EventHandler(this.botonSecreto_Click);
+            // 
+            // botonImportar
+            // 
+            this.botonImportar.Location = new System.Drawing.Point(472, 385);
+            this.botonImportar.Name = "botonImportar";
+            this.botonImportar.Size = new System.Drawing.Size(75, 23);
+            this.botonImportar.TabIndex = 12;
+            this.botonImportar.Text = "Importar";
+            this.botonImportar.UseVisualStyleBackColor = true;
+            this.botonImportar.Click += new System.EventHandler(this.botonImportar_Click);
+            // 
+            // botonExportar
+            // 
+            this.botonExportar.Enabled = false;
+            this.botonExportar.Location = new System.Drawing.Point(553, 385);
+            this.botonExportar.Name = "botonExportar";
+            this.botonExportar.Size = new System.Drawing.Size(75, 23);
+            this.botonExportar.TabIndex = 13;
+            this.botonExportar.Text = "Exportar";
+            this.botonExportar.UseVisualStyleBackColor = true;
+            this.botonExportar.Click += new System.EventHandler(this.botonExportar_Click);
+            // 
+            // menuFiltrar
+            // 
+            this.menuFiltrar.BackColor = System.Drawing.SystemColors.Control;
+            this.menuFiltrar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.menuFiltrar.CheckOnClick = true;
+            this.menuFiltrar.FormattingEnabled = true;
+            this.menuFiltrar.Items.AddRange(new object[] {
+            "Nombre",
+            "Código",
+            "Cantidad",
+            "Precio",
+            "Tipo",
+            "Descripción",
+            "Foto",
+            "Ruta"});
+            this.menuFiltrar.Location = new System.Drawing.Point(371, 311);
+            this.menuFiltrar.Name = "menuFiltrar";
+            this.menuFiltrar.Size = new System.Drawing.Size(79, 120);
+            this.menuFiltrar.TabIndex = 14;
+            this.menuFiltrar.SelectedIndexChanged += new System.EventHandler(this.menuFiltrar_SelectedIndexChanged);
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Visible = false;
+            this.nombre.Width = 50;
+            // 
+            // codigo
+            // 
+            this.codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Visible = false;
+            this.codigo.Width = 46;
+            // 
+            // cantidad
+            // 
+            this.cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Visible = false;
+            this.cantidad.Width = 55;
+            // 
+            // precio
+            // 
+            this.precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.precio.HeaderText = "Precio (unidad)";
+            this.precio.MinimumWidth = 101;
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Visible = false;
+            this.precio.Width = 101;
+            // 
+            // tipo
+            // 
+            this.tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            this.tipo.Visible = false;
+            this.tipo.Width = 34;
+            // 
+            // descripcion
+            // 
+            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Visible = false;
+            this.descripcion.Width = 69;
+            // 
+            // foto
+            // 
+            this.foto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.foto.HeaderText = "Foto";
+            this.foto.Image = ((System.Drawing.Image)(resources.GetObject("foto.Image")));
+            this.foto.Name = "foto";
+            this.foto.ReadOnly = true;
+            this.foto.Visible = false;
+            // 
+            // ruta
+            // 
+            this.ruta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ruta.HeaderText = "Ruta";
+            this.ruta.Name = "ruta";
+            this.ruta.ReadOnly = true;
+            this.ruta.Visible = false;
+            this.ruta.Width = 36;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuFiltrar);
+            this.Controls.Add(this.botonExportar);
+            this.Controls.Add(this.botonImportar);
+            this.Controls.Add(this.botonSecreto);
             this.Controls.Add(this.textoPrueba);
             this.Controls.Add(this.tablaProductos);
             this.Controls.Add(this.menuModificar);
@@ -261,6 +340,7 @@ namespace ejProductos
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();
             this.ResumeLayout(false);
@@ -282,16 +362,21 @@ namespace ejProductos
         private System.Windows.Forms.Button menuModificar;
         private System.Windows.Forms.DataGridView tablaProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn prueba;
+        private System.Windows.Forms.Label textoPrueba;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button botonSecreto;
+        private System.Windows.Forms.Button botonImportar;
+        private System.Windows.Forms.Button botonExportar;
+        private System.Windows.Forms.CheckedListBox menuFiltrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.Label textoPrueba;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewImageColumn foto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ruta;
 
         //private System.Windows.Forms.DataGridViewButtonColumn;
     }

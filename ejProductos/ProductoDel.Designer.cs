@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoDel));
             this.delInfo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.delTablaProductos = new System.Windows.Forms.DataGridView();
+            this.delBotonSalir = new System.Windows.Forms.Button();
             this.botonBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +40,8 @@
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delBotonSalir = new System.Windows.Forms.Button();
+            this.foto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ruta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.delTablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,13 +77,27 @@
             this.cantidad,
             this.precio,
             this.tipo,
-            this.descripcion});
+            this.descripcion,
+            this.foto,
+            this.ruta});
             this.delTablaProductos.Location = new System.Drawing.Point(50, 35);
             this.delTablaProductos.Name = "delTablaProductos";
             this.delTablaProductos.ReadOnly = true;
+            this.delTablaProductos.RowHeadersWidth = 4;
             this.delTablaProductos.Size = new System.Drawing.Size(371, 272);
             this.delTablaProductos.TabIndex = 10;
             this.delTablaProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.delTablaProductos_CellClick);
+            // 
+            // delBotonSalir
+            // 
+            this.delBotonSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.delBotonSalir.Location = new System.Drawing.Point(474, 284);
+            this.delBotonSalir.Name = "delBotonSalir";
+            this.delBotonSalir.Size = new System.Drawing.Size(75, 23);
+            this.delBotonSalir.TabIndex = 12;
+            this.delBotonSalir.Text = "Salir";
+            this.delBotonSalir.UseVisualStyleBackColor = true;
+            this.delBotonSalir.Click += new System.EventHandler(this.delBotonSalir_Click);
             // 
             // botonBorrar
             // 
@@ -140,15 +157,21 @@
             this.descripcion.ReadOnly = true;
             this.descripcion.Width = 88;
             // 
-            // delBotonSalir
+            // foto
             // 
-            this.delBotonSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.delBotonSalir.Location = new System.Drawing.Point(474, 284);
-            this.delBotonSalir.Name = "delBotonSalir";
-            this.delBotonSalir.Size = new System.Drawing.Size(75, 23);
-            this.delBotonSalir.TabIndex = 12;
-            this.delBotonSalir.Text = "Salir";
-            this.delBotonSalir.UseVisualStyleBackColor = true;
+            this.foto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.foto.HeaderText = "Foto";
+            this.foto.Image = ((System.Drawing.Image)(resources.GetObject("foto.Image")));
+            this.foto.Name = "foto";
+            this.foto.ReadOnly = true;
+            // 
+            // ruta
+            // 
+            this.ruta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ruta.HeaderText = "Ruta";
+            this.ruta.Name = "ruta";
+            this.ruta.ReadOnly = true;
+            this.ruta.Width = 55;
             // 
             // ProductoDel
             // 
@@ -176,6 +199,7 @@
         private System.Windows.Forms.Label delInfo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView delTablaProductos;
+        private System.Windows.Forms.Button delBotonSalir;
         private System.Windows.Forms.DataGridViewButtonColumn botonBorrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
@@ -183,6 +207,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.Button delBotonSalir;
+        private System.Windows.Forms.DataGridViewImageColumn foto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ruta;
     }
 }
