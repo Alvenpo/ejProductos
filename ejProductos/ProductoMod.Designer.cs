@@ -40,6 +40,7 @@
             this.ruta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modInfo = new System.Windows.Forms.Label();
             this.modBotonModificar = new System.Windows.Forms.Button();
+            this.labelEditando = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.modTablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,11 +162,23 @@
             this.modBotonModificar.UseVisualStyleBackColor = true;
             this.modBotonModificar.Click += new System.EventHandler(this.modBotonModificar_Click);
             // 
+            // labelEditando
+            // 
+            this.labelEditando.AutoSize = true;
+            this.labelEditando.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.labelEditando.Location = new System.Drawing.Point(713, 357);
+            this.labelEditando.Name = "labelEditando";
+            this.labelEditando.Size = new System.Drawing.Size(76, 17);
+            this.labelEditando.TabIndex = 18;
+            this.labelEditando.Text = "Editando...";
+            this.labelEditando.Visible = false;
+            // 
             // ProductoMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelEditando);
             this.Controls.Add(this.modBotonModificar);
             this.Controls.Add(this.modBotonSalir);
             this.Controls.Add(this.modTablaProductos);
@@ -196,5 +209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewImageColumn foto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ruta;
+        private System.Windows.Forms.Label labelEditando;
     }
 }

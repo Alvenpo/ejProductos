@@ -47,6 +47,7 @@ namespace ejProductos
             this.botonImportar = new System.Windows.Forms.Button();
             this.botonExportar = new System.Windows.Forms.Button();
             this.menuFiltrar = new System.Windows.Forms.CheckedListBox();
+            this.mainInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,11 +215,23 @@ namespace ejProductos
             this.menuFiltrar.TabIndex = 14;
             this.menuFiltrar.SelectedIndexChanged += new System.EventHandler(this.menuFiltrar_SelectedIndexChanged);
             // 
+            // mainInfo
+            // 
+            this.mainInfo.AutoSize = true;
+            this.mainInfo.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.mainInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.mainInfo.Location = new System.Drawing.Point(146, 70);
+            this.mainInfo.Name = "mainInfo";
+            this.mainInfo.Size = new System.Drawing.Size(640, 280);
+            this.mainInfo.TabIndex = 15;
+            this.mainInfo.Text = resources.GetString("mainInfo.Text");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.mainInfo);
             this.Controls.Add(this.menuFiltrar);
             this.Controls.Add(this.botonExportar);
             this.Controls.Add(this.botonImportar);
@@ -234,6 +247,7 @@ namespace ejProductos
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -256,6 +270,7 @@ namespace ejProductos
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewImageColumn foto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ruta;
+        private System.Windows.Forms.Label mainInfo;
 
         //private System.Windows.Forms.DataGridViewButtonColumn;
     }

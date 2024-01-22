@@ -22,7 +22,7 @@ namespace ejProductos
             this.padre = padre;
         }
 
-        private void checkBotonAceptar_Click(object sender, EventArgs e)
+        private void checkBotonAceptar_Click(object sender, EventArgs e) //Al pulsar el botón aceptar, se guarda el valor del botón que esté seleccionado
         {
             foreach (RadioButton boton in ListaTipos)
             {
@@ -33,7 +33,7 @@ namespace ejProductos
             }
         }
 
-        private void modTipoDespegable_Load(object sender, EventArgs e)
+        private void modTipoDespegable_Load(object sender, EventArgs e) //Al abrir el menú despegable se comprueba el valor de la columna Tipo, y si el valor que tiene coincide con el de un RadioButton, dicho botón aparecerá seleccionado
         {
             List<RadioButton> botones = new List<RadioButton>();
             botones.Add(rbRopa);

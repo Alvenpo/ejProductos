@@ -138,35 +138,11 @@
   <metadata name="foto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ruta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="codigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="precio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tipo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="descripcion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="foto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="foto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALEAAACkCAYAAADYMs/tAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAWUpJREFUeF7tnQdgHNW99a2ulVbbV3UlrVa99+7ejY0B22B6r0nokOR9L+/lvYRe
+        vQAADr0BR/uQrQAAWUpJREFUeF7tnQdgHNW99a2ulVbbV3UlrVa99+7ejY0B22B6r0nokOR9L+/lvYRe
         U+nk5SUkoXcIBIIbPAjginsD994tq+t8539nR1rJ4wYukpHgeO5OuTNz72/O/O+dNiAiNAYnWpFhlm7q
         OT08xHzQuM55w7+bwsOY/ylW2AmXGWHh0QbjdVkoa59VSPjhdVIgFh0K4MPpu0JsBNSpkDFYx1P9EBsC
         1FtkBMXh1NsAFhmDdTzVD7EhPL1FRlD0NRmDdTzVD7EhPL1FRlD0NRmDdTzVD7EhPKebjOA6lTKG7WTK
@@ -559,4 +535,20 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="mainInfo.Text" xml:space="preserve">
+    <value>Aquí se irán mostrando los productos que vayas añadiendo desde el apartado Añadir
+           producto, o seleccionando un archivo .csv desde el apartado Importar
+
+
+En el apartado Modificar producto podrás cambiar cualquier valor del producto, y en 
+                           Borrar producto podrás borrar productos de la lista
+
+
+      Si quieres guardar tu listado de productos, podrás exportarlo en formato .csv 
+                                        pulsando en el botón Exportar
+
+
+       También puedes filtrar qué campos de un producto deseas ver marcando y 
+                            desmarcando las casillas de cada propiedad</value>
+  </data>
 </root>

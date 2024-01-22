@@ -270,6 +270,7 @@
             this.MinimizeBox = false;
             this.Name = "ProductoAdd";
             this.Text = "ProductoAñadir";
+            this.Load += new System.EventHandler(this.ProductoAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.previewFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
