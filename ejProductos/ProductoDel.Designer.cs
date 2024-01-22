@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoDel));
             this.delInfo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.delTablaProductos = new System.Windows.Forms.DataGridView();
-            this.delBotonSalir = new System.Windows.Forms.Button();
             this.botonBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +40,7 @@
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.foto = new System.Windows.Forms.DataGridViewImageColumn();
             this.ruta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delBotonSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.delTablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,21 +48,12 @@
             // 
             this.delInfo.AutoSize = true;
             this.delInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.delInfo.Location = new System.Drawing.Point(47, 9);
+            this.delInfo.Location = new System.Drawing.Point(12, 4);
             this.delInfo.Name = "delInfo";
             this.delInfo.Size = new System.Drawing.Size(530, 18);
             this.delInfo.TabIndex = 1;
             this.delInfo.Text = "Para eliminar un producto haz click en el botón Borrar de la fila correspondiente" +
     "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(496, 162);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
             // 
             // delTablaProductos
             // 
@@ -80,24 +70,13 @@
             this.descripcion,
             this.foto,
             this.ruta});
-            this.delTablaProductos.Location = new System.Drawing.Point(50, 35);
+            this.delTablaProductos.Location = new System.Drawing.Point(12, 30);
             this.delTablaProductos.Name = "delTablaProductos";
             this.delTablaProductos.ReadOnly = true;
             this.delTablaProductos.RowHeadersWidth = 4;
-            this.delTablaProductos.Size = new System.Drawing.Size(371, 272);
+            this.delTablaProductos.Size = new System.Drawing.Size(695, 408);
             this.delTablaProductos.TabIndex = 10;
             this.delTablaProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.delTablaProductos_CellClick);
-            // 
-            // delBotonSalir
-            // 
-            this.delBotonSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.delBotonSalir.Location = new System.Drawing.Point(474, 284);
-            this.delBotonSalir.Name = "delBotonSalir";
-            this.delBotonSalir.Size = new System.Drawing.Size(75, 23);
-            this.delBotonSalir.TabIndex = 12;
-            this.delBotonSalir.Text = "Salir";
-            this.delBotonSalir.UseVisualStyleBackColor = true;
-            this.delBotonSalir.Click += new System.EventHandler(this.delBotonSalir_Click);
             // 
             // botonBorrar
             // 
@@ -173,14 +152,24 @@
             this.ruta.ReadOnly = true;
             this.ruta.Width = 55;
             // 
+            // delBotonSalir
+            // 
+            this.delBotonSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.delBotonSalir.Location = new System.Drawing.Point(713, 415);
+            this.delBotonSalir.Name = "delBotonSalir";
+            this.delBotonSalir.Size = new System.Drawing.Size(75, 23);
+            this.delBotonSalir.TabIndex = 12;
+            this.delBotonSalir.Text = "Salir";
+            this.delBotonSalir.UseVisualStyleBackColor = true;
+            this.delBotonSalir.Click += new System.EventHandler(this.delBotonSalir_Click);
+            // 
             // ProductoDel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 319);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.delBotonSalir);
             this.Controls.Add(this.delTablaProductos);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.delInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -197,7 +186,6 @@
         #endregion
 
         private System.Windows.Forms.Label delInfo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView delTablaProductos;
         private System.Windows.Forms.Button delBotonSalir;
         private System.Windows.Forms.DataGridViewButtonColumn botonBorrar;

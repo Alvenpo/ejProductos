@@ -35,27 +35,17 @@ namespace ejProductos
             Nombre = addNombre.Text;
             Codigo = addCodigo.Text;
             Cantidad = Convert.ToInt32(addCantidad.Text);
-            //IMPORTANTE: Precio no muestra bien los decimales (no pone coma)
-            Precio = /*((float) Convert.ToDouble(addPrecio.Text)).ToString()*/float.Parse(addPrecio.Text, CultureInfo.InvariantCulture.NumberFormat) + "€"; //Comprobar que es un número y después añadir el € //La forma comentada no funcionaba: era como un Convert.ToInt()
+            Precio = float.Parse(addPrecio.Text, CultureInfo.InvariantCulture.NumberFormat) + "€"; //Comprobar que es un número y después añadir el € 
             Tipo = addTipo.Text;
             Descripcion = addDescripcion.Text;
             Foto = Image.FromFile(addFoto.Text);
             Ruta = addFoto.Text;
-            /*String[] Tipos = new String[addTipo.Items.Count]; //IMPORTANTE: Descomentar más tarde. Se puede usar para comprobar si el tipo es válido
-            int i = 0;
-            foreach(String x in addTipo.Items)
-            {
-                Tipos[i] = x;
-                i++;
-            }*/
         }
 
         private void addBotonFoto_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog() { Filter = "Archivos .png (*.png)|*.png|Archivos .jpg (*.jpg)|*.jpg|Archivos .gif (*.gif)|*.gif"/*"|Todos los archivos (*.*)|*.*"*/ };
-            ofd.InitialDirectory = @"Imágenes"; //La arroba es opcional
-            //ofd.RestoreDirectory = true; //No es necesario ya que cada vez que pulsamos el botón se crea un nuevo OpenFileDialog
-            //ofd.Title = "Selecciona una imagen";
+            OpenFileDialog ofd = new OpenFileDialog() { Filter = "Archivos .png (*.png)|*.png|Archivos .jpg (*.jpg)|*.jpg|Archivos .gif (*.gif)|*.gif" };
+            ofd.InitialDirectory = @"Imágenes";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 addFoto.Text = ofd.FileName;
@@ -65,7 +55,6 @@ namespace ejProductos
 
         private void addComprobarCampos_TextChanged(object sender, EventArgs e)
         {
-            //addComprobarCampos.Text = $"{addNombre.Text}, {addCodigo.Text}, {addCantidad.Text}, {addPrecio.Text}, {addTipo.Text}, {addDescripcion.Text}, {addFoto.Text}";
             if (((Form1)padre).Productos != null) 
             {
                 pkRepetida = false;

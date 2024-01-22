@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkboxTipo = new System.Windows.Forms.CheckedListBox();
             this.labelTipo = new System.Windows.Forms.Label();
             this.checkBotonAceptar = new System.Windows.Forms.Button();
             this.rbRopa = new System.Windows.Forms.RadioButton();
@@ -36,23 +35,6 @@
             this.rbMueble = new System.Windows.Forms.RadioButton();
             this.rbElectrodomestico = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
-            // 
-            // checkboxTipo
-            // 
-            this.checkboxTipo.BackColor = System.Drawing.SystemColors.Control;
-            this.checkboxTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkboxTipo.CheckOnClick = true;
-            this.checkboxTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.checkboxTipo.FormattingEnabled = true;
-            this.checkboxTipo.Items.AddRange(new object[] {
-            "Ropa",
-            "Alimentación",
-            "Mueble",
-            "Electrodoméstico"});
-            this.checkboxTipo.Location = new System.Drawing.Point(223, 32);
-            this.checkboxTipo.Name = "checkboxTipo";
-            this.checkboxTipo.Size = new System.Drawing.Size(192, 120);
-            this.checkboxTipo.TabIndex = 15;
             // 
             // labelTipo
             // 
@@ -87,7 +69,6 @@
             this.rbRopa.TabStop = true;
             this.rbRopa.Text = "Ropa";
             this.rbRopa.UseVisualStyleBackColor = true;
-            this.rbRopa.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // rbAlimentacion
             // 
@@ -100,7 +81,6 @@
             this.rbAlimentacion.TabStop = true;
             this.rbAlimentacion.Text = "Alimentación";
             this.rbAlimentacion.UseVisualStyleBackColor = true;
-            this.rbAlimentacion.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // rbMueble
             // 
@@ -113,7 +93,6 @@
             this.rbMueble.TabStop = true;
             this.rbMueble.Text = "Mueble";
             this.rbMueble.UseVisualStyleBackColor = true;
-            this.rbMueble.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // rbElectrodomestico
             // 
@@ -126,7 +105,6 @@
             this.rbElectrodomestico.TabStop = true;
             this.rbElectrodomestico.Text = "Electrodoméstico";
             this.rbElectrodomestico.UseVisualStyleBackColor = true;
-            this.rbElectrodomestico.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // modTipoDespegable
             // 
@@ -139,7 +117,6 @@
             this.Controls.Add(this.rbRopa);
             this.Controls.Add(this.checkBotonAceptar);
             this.Controls.Add(this.labelTipo);
-            this.Controls.Add(this.checkboxTipo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -152,8 +129,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckedListBox checkboxTipo;
         private System.Windows.Forms.Label labelTipo;
         private System.Windows.Forms.Button checkBotonAceptar;
         private System.Windows.Forms.RadioButton rbRopa;
